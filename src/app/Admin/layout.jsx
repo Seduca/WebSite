@@ -14,16 +14,10 @@ function Home({ children }) {
     useEffect(() => {
         if (user === undefined) { onAuth(setUserProfile, setUserData) }
         if (user === null) { router.replace('/') }
-        if (userDB === null) { router.replace('/') }
-        if (userDB && userDB !== undefined && userDB.rol !== 'Admin') { router.replace('/') }
-        if (cliente === undefined) getSpecificData('/Cliente', setCliente)
         if (trackingDB === undefined ) getSpecificData('/Institutos', setTrackingDB)
-
     }, [user, cliente, trackingDB])
     return (
-
        user && user !== undefined &&  <div  onClick={() => {setFocus(false); setNavItem(false)} }>{children}</div>
-
     )
 }
 

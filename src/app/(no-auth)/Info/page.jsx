@@ -208,7 +208,7 @@ export default function Home() {
             <img src="/logo.jpeg" className='w-[80px]' alt="" />
         </div>
         <h1 className='text-[20px] text-center font-bold'>SEDUCA INFORMA</h1>
-        <h2 className='text-center text-[16px]'>Subdireccion de educacion superior de formacion profesional <br /> LA PAZ - 2024</h2>
+        <h2 className='text-center text-[16px] uppercase'>Subdireccion de educacion superior de formacion profesional <br /> LA PAZ - 2024</h2>
 
         <br />
 
@@ -227,10 +227,10 @@ export default function Home() {
 
 
         <div className='relative flex justify-center' >
-            <button type="button" class={` shadow-2xl  ${filter2 === 'PUBLICA' ? 'bg-gradient-to-br text-white from-purple-600 to-blue-500 hover:bg-gradient-to-bl ' : 'border border-[#c6c6c6] text-black '} focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2`} onClick={() => setFilter2('PUBLICA')}>
+            <button type="button" class={` shadow-2xl  ${filter2 === 'PUBLICA' ? 'bg-gradient-to-br text-white from-purple-600 to-blue-500 hover:bg-gradient-to-bl ' : 'border border-[#c6c6c6] text-black '} focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2`} onClick={() => filter2 === 'PUBLICA' ? setFilter2('') : setFilter2('PUBLICA')}>
                 INSTITUTOS PUBLICOS
             </button>
-            <button type="button" class={`shadow-2xl ${filter2 === 'PRIVADA' ? 'bg-gradient-to-br text-white  from-purple-600 to-blue-500 hover:bg-gradient-to-bl' : 'border border-[#c6c6c6] text-black '}  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2`} onClick={() => setFilter2('PRIVADA')}>
+            <button type="button" class={`shadow-2xl ${filter2 === 'PRIVADA' ? 'bg-gradient-to-br text-white  from-purple-600 to-blue-500 hover:bg-gradient-to-bl' : 'border border-[#c6c6c6] text-black '}  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2`} onClick={() => filter2 === 'PRIVADA' ? setFilter2('') : setFilter2('PRIVADA')}>
                 INSTITUTOS PRIVADOS
             </button>
         </div>
@@ -241,7 +241,7 @@ export default function Home() {
             <div className=' '>
                 {
                     trackingDB && trackingDB && Object.entries(trackingDB).map((i, index) => {
-                        return i[1]['NOMBRE DE INSTITUTO'] && i[1]['NOMBRE DE INSTITUTO'].toLowerCase().includes(filter.toLowerCase()) && i[1]['PROPIEDAD'].includes(filter2) && <div className='relative bg-white flex justify-between items-center px-5 py-3 border-[.5px] cursor-pointer ' onClick={() => handlerEdit(i[1]['NOMBRE DE INSTITUTO'])}>
+                        return i[1]['NOMBRE DE INSTITUTO'] && i[1]['NOMBRE DE INSTITUTO'].toLowerCase().includes(filter.toLowerCase()) && i[1]['PROPIEDAD'].includes(filter2) && <div className='relative bg-white flex justify-between items-center px-5 py-3 border-[.5px] cursor-pointer '>
                             <span> INSTITUTO: {i[1]['NOMBRE DE INSTITUTO']} <br />{i[1]['PROPIEDAD']}</span>
                             {console.log(i[1]['PROPIEDAD'])}
                             <div className="w-[150px]">

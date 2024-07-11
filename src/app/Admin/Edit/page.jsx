@@ -80,7 +80,7 @@ export default function Home() {
         if (window && typeof window !== "undefined") {
             setQuery(window.location.href.split('=')[1].replaceAll('%20', ' '))
         }
-        if (trackingDB[query] && trackingDB[query].carreras) {
+        if (trackingDB && trackingDB[query] && trackingDB[query].carreras) {
             setData2({ ...trackingDB[query].carreras, ...data2 })
         }
     }, [cliente, query, trackingDB])
@@ -95,7 +95,7 @@ export default function Home() {
                     <div className="absolute w-[50px] top-5 right-5 text-white p-1 rounded-tl-lg rounded-br-lg text-center bg-red-600" onClick={close}>
                         X
                     </div>
-                    {trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
+                    {trackingDB &&trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
                         <div className='relative p-5 my-5 mt-10 bg-white space-y-5 shadow-2xl  '>
                             <h5 className='text-center font-medium text-[16px]'>Editar <br /> </h5>
                             {/* <h5 className='text-center font-medium text-[16px]'>CODIGO DEL SERVICIO <br /> {query}<br /> </h5>
@@ -114,7 +114,7 @@ export default function Home() {
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['RESOLUCION MISTERIAL']} required label={'RESOLUCION MISTERIAL'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE PAGINA']} required label={'LINK DE PAGINA'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE UBICACION']} required label={'LINK DE UBICACION'} shadow='shadow-white' />
-                            < Select arr={['PUBLICA', 'PRIVADA']} defaultValue={data[query] && data[query].PROPIEDAD ? data[query].PROPIEDAD : trackingDB[query]['PROPIEDAD']} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
+                            < Select  arr={['TECNICA', 'TECNOLOGICA']} defaultValue={data[query] && data[query].PROPIEDAD ? data[query].PROPIEDAD : trackingDB[query]['PROPIEDAD']} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
 
                             <div className='w-full flex justify-center	'>
                                 {/* <Button theme="Danger" click={(e) => { saveFrontPage(e) }}>Eliminar</Button> */}
@@ -135,15 +135,15 @@ export default function Home() {
                         </button>
                     </div>
 
-                    {trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
+                    { trackingDB&&trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
                         <div className='relative p-5 my-5 mt-10 bg-white space-y-5 shadow-2xl  '>
 
                             <h5 className='text-center font-medium text-[16px]'>STATUS +<br /> </h5>
                             {data2 && data2 && Object.values(data2).map((item, index) => {
                                 return <div className=' space-y-5 border-b  md:place-items-end md:gap-2  border-[#818181] pb-5'>
-                                    < InputFlotante type="text" name={`ip`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index,)} value={data2[`item${index}`] && data2[`item${index}`][`ip`] ? data2[`item${index}`][`ip`] : item[`ip`]} required label={'carrera'} shadow='shadow-white' />
+                                    < InputFlotante type="text" name={`ip`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index,)} value={data2[`item${index}`] && data2[`item${index}`][`ip`] ? data2[`item${index}`][`ip`] : item[`ip`]} required label={'Carrera'} shadow='shadow-white' />
                                     {/* < InputFlotante type="text" name={`ic`} uid={`value_${index}`} onChange={(e) => onChangeHandler2(e, index,)} value={data2[`item${index}`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : item[`ic`]} required label={'Valor'} shadow='shadow-white' /> */}
-                                    < Select arr={['TECNICA', 'TECNOLOGICA']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : i[`ic`]} name='ic' click={handlerSelectClick3} uuid={index} label='categoria' required />
+                                    < Select arr={['Tecnico Superior', 'Tecnico medio', 'Tecnico auxiliar']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : i[`ic`]} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel' required />
                                     <div className='flex justify-center'>
                                         <div className='ml-10'>
                                             Mañana <input type="checkbox" name='mañana' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].mañana}/>

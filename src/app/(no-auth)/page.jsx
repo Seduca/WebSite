@@ -174,12 +174,12 @@ export default function Home() {
       </div>
 
       <h1 className='text-[20px] text-center font-bold'>SEDUCA INFORMA</h1>
-      <h2 className='text-center text-[16px]'>subdireccion de educacion superior de formacion profesional <br /> LA PAZ - 2024</h2>
+      <h2 className='text-center text-[16px] uppercase'>subdireccion de educacion superior de formacion profesional <br /> LA PAZ - 2024</h2>
       <div className='relative h-[80%] fles flex-col space-y-10 md:space-y-0 md:grid md:grid-cols-2 justify-items-center place-items-center gap-5  p-10'>
 
-        <div className='text-[16px] shadow-2xl border p-10 bg-white space-y-5'>
-          <p className='mb-5'>
-            Informacion de Institutos tecnicos tecnologicos <br />publicos y privados <br /> LA PAZ - EL ALTO <br /> 2024
+        <div className='text-[16px] w-full shadow-2xl border p-12 bg-white space-y-12'>
+          <p className='mb-5 uppercase'>
+            Informacion de Institutos <br /> tecnicos tecnologicos <br />publicos y privados <br /> LA PAZ - EL ALTO <br /> 2024
           </p>
           <Link href='/Info' className=''>
             <button className='flex items-center text-white  bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
@@ -188,8 +188,8 @@ export default function Home() {
           </Link>
 
         </div>
-        <div className='flex flex-col justify-center items-center text-[16px] shadow-2xl border p-10 bg-white space-y-5'>
-          <p className='text-[16px] '>Accede facilmente atravez de nuestro QR</p>
+        <div className='flex flex-col w-full justify-center items-center text-[16px] shadow-2xl border p-10 bg-white space-y-5'>
+          <p className='text-[16px] '>Accede facilmente atravez de nuestro codigo QR</p>
           <img src="/qr.png" className='h-[150px]' alt="" />
         </div>
       </div>
