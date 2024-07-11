@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-navbutton-color" content="#000000" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
-        <meta name="description" content="SInformacion de Seduca" />
+        <meta name="description" content="Informacion de institutos publicoa y privados." />
         <meta name="keywords" content="Seduca Informa" />
         <meta name="author" content="Logistics Gear" />
         <title>Seduca Informa</title>
