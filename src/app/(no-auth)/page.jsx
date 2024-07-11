@@ -23,7 +23,6 @@ import 'react-quill/dist/quill.core.css';
 import dynamic from 'next/dynamic'
 import parse from 'html-react-parser';
 
-// import { useHash } from '@/HOCs/useHash';
 
 
 
@@ -32,10 +31,8 @@ export default function Home() {
 
 
   const [code, setCode] = useState('')
-  const hash = useHash();
   const [filter, setFilter] = useState('')
 
-  // const [hash, sethash] = useState('')
 
   const pathname = usePathname()
 
