@@ -11,16 +11,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es" style={{ scrollBehavior: 'smooth' }}>
       <head>
-        <link rel="icon" href="/lg.png" />
+        <link rel="icon" href="/logo.jpeg" />
         <link rel='manifest' href='/manifest.json' />
-        <link rel='apple-touch-icon' href='/lg.png' />
+        <link rel='apple-touch-icon' href='/logo.jpeg' />
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-navbutton-color" content="#000000" />
         <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
         <meta name="description" content="SInformacion de Seduca" />
         <meta name="keywords" content="Seduca Informa" />
         <meta name="author" content="Logistics Gear" />
-        <title>Logistics</title>
+        <title>Seduca Informa</title>
       </head>
       <body className={inter.className}   >
         <UserProvider>
