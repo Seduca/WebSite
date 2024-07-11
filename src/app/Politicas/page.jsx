@@ -2,7 +2,6 @@
 
 
 
-import Subtitle from '@/components/Subtitle'
 
 
 import { useRouter } from 'next/navigation';
@@ -57,7 +56,7 @@ function Home() {
             </div>
             <br />
             <div  className='lg:pl-12 lg:border-l bg-gray-50 p-5 lg:bg-white lg:p-0'>
-                <Subtitle>Politicas de servicio</Subtitle>
+                <h3>Politicas de servicio</h3>
                 <p >
 
                     Política de Servicio para la Aplicación de Venta de Implantes de Osteosíntesis
@@ -77,7 +76,7 @@ function Home() {
                     Por favor, tenga en cuenta que al utilizar nuestra aplicación, usted está aceptando los términos y condiciones expuestos en esta política de servicio.
                 </p>
                 <br />
-                <Subtitle>Politicas de Privacidad de Datos</Subtitle>
+                <h3>Politicas de Privacidad de Datos</h3>
                
 
                 

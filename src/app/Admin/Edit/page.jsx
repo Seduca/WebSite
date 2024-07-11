@@ -84,7 +84,7 @@ export default function Home() {
             setData2({ ...trackingDB[query].carreras, ...data2 })
         }
     }, [cliente, query, trackingDB])
-    console.log(data)
+    console.log(query)
     return (
 
         <div className="min-h-full">

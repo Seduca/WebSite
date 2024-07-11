@@ -77,7 +77,7 @@ export default function Home() {
                     <div className=' shadow-xl'>
                         {
                             trackingDB && trackingDB && Object.entries(trackingDB).map((i, index) => {
-                                return i[1]['NOMBRE DE INSTITUTO'] && i[1]['NOMBRE DE INSTITUTO'].includes(filter) && <div className='relative bg-white flex justify-between items-center px-5 py-3 border-[.5px] cursor-pointer ' onClick={() => handlerEdit(i[1]['NOMBRE DE INSTITUTO'])}>
+                                return i[1]['NOMBRE DE INSTITUTO'] && i[1]['NOMBRE DE INSTITUTO'].toLowerCase().includes(filter.toLowerCase()) && <div className='relative bg-white flex justify-between items-center px-5 py-3 border-[.5px] cursor-pointer ' onClick={() => handlerEdit(i[1]['NOMBRE DE INSTITUTO'])}>
                                     <span> NOMBRE DE INSTITUTO: {i[1]['NOMBRE DE INSTITUTO']} <br />{i[1]['FECHA DE CREACION']}</span>
                                     {/* <span></span> */}
                                     <div className="w-[150px]"> <Button theme="Danger" click={(e) => { handlerRemove(e,i) }}>Eliminar</Button></div>
