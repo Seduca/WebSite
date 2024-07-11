@@ -78,7 +78,7 @@ export default function Home() {
     }
     useEffect(() => {
         if (window && typeof window !== "undefined") {
-            setQuery(window.location.href.split('=')[1])
+            setQuery(window.location.href.split('=')[1].replaceAll('%20', ' '))
         }
         if (trackingDB[query] && trackingDB[query].carreras) {
             setData2({ ...trackingDB[query].carreras, ...data2 })

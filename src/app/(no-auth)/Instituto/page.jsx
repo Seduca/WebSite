@@ -1,60 +1,18 @@
 'use client';
 import { useUser } from '@/context/Context'
 import { useEffect, useState } from 'react'
-import { writeUserData, removeData } from '@/firebase/utils'
-import Select from '@/components/SelectSimple'
-import Button from '@/components/Button'
-import Loader from '@/components/Loader'
-import { useRouter } from 'next/navigation';
-import InputFlotante from '@/components/InputFlotante'
 import QRCode from "qrcode.react";
 
 
-
-
-
-
-
 export default function Home() {
-
-
-
-
     const { setUserSuccess, success, trackingDB, cliente, setCliente, cart, setCart, modal, setModal } = useUser()
-    const router = useRouter()
     const [query, setQuery] = useState('')
-    const [data, setData] = useState({})
     const [data2, setData2] = useState({})
 
-    const [db, setdb] = useState(null)
-
-
-
-
-
-    function handlerSelectClick3(name, i, index) {
-        setData2({ ...data2, [`item${index}`]: { ...data2[`item${index}`], [name]: i } })
-        return
-    }
-    function handlerSelectClick4(e, index, d) {
-        console.log(e.target.checked)
-        setData2({ ...data2, [`item${index}`]: { ...data2[`item${index}`], [e.target.name]: e.target.checked } })
-        return
-    }
-
-
-
-    function saveFrontPage2(e) {
-        e.preventDefault()
-        setUserSuccess('Cargando')
-        writeUserData(`/Institutos/${query}/carreras`, data2, setUserSuccess)
-    }
-    function close(e) {
-        router.back()
-    }
+   
     useEffect(() => {
         if (window && typeof window !== "undefined") {
-            setQuery(window.location.href.split('=')[1])
+            setQuery(window.location.href.split('=')[1].replaceAll('%20', ' '))
         }
         if (trackingDB && trackingDB[query] && trackingDB[query].carreras) {
             setData2({ ...trackingDB[query].carreras, ...data2 })

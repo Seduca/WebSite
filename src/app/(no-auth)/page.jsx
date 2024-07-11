@@ -23,7 +23,7 @@ import 'react-quill/dist/quill.core.css';
 import dynamic from 'next/dynamic'
 import parse from 'html-react-parser';
 
-import { useHash } from '@/HOCs/useHash';
+// import { useHash } from '@/HOCs/useHash';
 
 
 
@@ -163,87 +163,11 @@ export default function Home() {
     }
     )
   }
-  function calculator(e) {
-    e.preventDefault()
-    if (user === null || user === undefined) {
-      router.push('/Login')
-      return
-    }
-
-    let val = Object.values(cliente.priceFTL).find((i) => {
-      return i.ORIGEN === inputRef.current.value && i.DESTINO === inputRef2.current.value && i.MERCANCIA === selectValue.MERCANCIA && i['PESO (KG)'] >= selectValue['PESO (KG)'] && i.SERVICIO === selectValue.SERVICIO && i['TIPO DE UNIDAD'] === selectValue['TIPO DE UNIDAD'] && i['VOLUMEN M3'] >= selectValue['VOLUMEN M3']
-    })
-    val !== undefined ? setCalcValue({ ...val, ['PESO (KG)']: selectValue['PESO (KG)'], ['VOLUMEN M3']: selectValue['VOLUMEN M3'], TOTAL: val['SERVICIOS LOGISTICOS USD'] * 1 + val['FLETE USD'] * 1 }) : setUserSuccess('NO DATA')
-  }
-  function calculatorFCL(e) {
-    e.preventDefault()
-    if (user === null || user === undefined) {
-      router.push('/Login')
-      return
-    }
-
-    let val = Object.values(cliente.priceFCL).filter((i) => {
-      return i.ORIGEN === inputRef.current.value && i.DESTINO === inputRef2.current.value
-    })
-    val !== undefined ? setCalcValueFCL(val) : setUserSuccess('NO DATA')
-  }
-  function handlerSeeMore(key) {
-    seeMore === key ? setSeeMore('') : setSeeMore(key)
-  }
-
-  function onlyUnique(value, index, self) {
-    return self.indexOf(value) === index;
-  }
-  function onChangeHandler(e) {
-    setCode(e.target.value)
-
-  }
-  function filterTracking(e) {
-    e.preventDefault()
-
-    if (userDB) {
-      router.push(`/Tracking?item=${code}`)
-    } else {
-      setModal('REGISTRATE')
-    }
-  }
-  function handlerElement(data) {
-    if (userDB) {
-      setElement(data)
-    } else {
-      setModal('REGISTRATE')
-    }
-  }
-
-  // async function getTranslate() {
-  //   const res = await fetch("/api/translate");
-  //   return console.log(await res.json());
+ 
+  
+  // function HandlerOnChange(e) {
+  //   QRreaderUtils(e, setFilterQR,)
   // }
-
-  // getTranslate()
-
-
-
-  // console.log(inputRef.current.value)
-  // console.log(inputRef2.current.value)
-  // console.log(cliente.inicio.content)
-
-  function preValidate() {
-    if (inputRef.current && inputRef2.current && selectValue.MERCANCIA && selectValue['PESO (KG)'] && selectValue.SERVICIO && selectValue['TIPO DE UNIDAD'] && selectValue['VOLUMEN M3']) {
-      let val = Object.values(cliente.priceFTL).find((i) => {
-        return i.ORIGEN === inputRef.current.value && i.DESTINO === inputRef2.current.value && i.MERCANCIA === selectValue.MERCANCIA && i['PESO (KG)'] >= selectValue['PESO (KG)'] && i.SERVICIO === selectValue.SERVICIO && i['TIPO DE UNIDAD'] === selectValue['TIPO DE UNIDAD'] && i['VOLUMEN M3'] >= selectValue['VOLUMEN M3']
-      })
-      return val
-    }
-  }
-  function HandlerOnChange(e) {
-    QRreaderUtils(e, setFilterQR,)
-  }
-  console.log(hash)
-  useEffect(() => {
-    // const section = hash.replace("#", "");
-    // if (section) scrollToSection(section);
-  }, [hash, languaje]);
 
   return (
 
