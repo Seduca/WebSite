@@ -18,7 +18,6 @@ import 'react-quill/dist/quill.bubble.css';
 import 'react-quill/dist/quill.core.css';
 
 
-import { useHash } from '@/HOCs/useHash';
 
 
 export default function Home() {
@@ -26,7 +25,6 @@ export default function Home() {
 
 
     const [code, setCode] = useState('')
-    const hash = useHash();
     const [filter, setFilter] = useState('')
     const [filter2, setFilter2] = useState('')
 
@@ -202,11 +200,6 @@ export default function Home() {
         console.log(filter)
     }
 
-    console.log(hash)
-    useEffect(() => {
-        // const section = hash.replace("#", "");
-        // if (section) scrollToSection(section);
-    }, [hash, languaje]);
 
     return (<section className='h-screen p-5 md:p-12  bg-white'>
 
