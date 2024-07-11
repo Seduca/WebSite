@@ -22,7 +22,7 @@ function Home({ children }) {
     }, [user, cliente, trackingDB])
     return (
 
-       user && user !== undefined && userDB && userDB.rol === 'Admin' && <div  onClick={() => {setFocus(false); setNavItem(false)} }>{children}</div>
+       user && user !== undefined &&  <div  onClick={() => {setFocus(false); setNavItem(false)} }>{children}</div>
 
     )
 }
