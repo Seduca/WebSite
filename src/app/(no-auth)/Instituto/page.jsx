@@ -20,7 +20,7 @@ export default function Home() {
     }, [cliente, query, trackingDB])
     console.log(trackingDB)
     return (
-        <section className='h-screen p-5 md:p-12  bg-white'>
+        <section className='min-h-screen p-5 md:p-12  bg-[#ffefef]'>
 
             <div className='flex justify-center'>
 
@@ -35,7 +35,7 @@ export default function Home() {
 
                     <br />
                     <div className='flex w-full  flex-col md:flex-row md:justify-between'>
-                        <div className='flex flex-col w-[50%] '>
+                        <div className='flex flex-col w-full md:w-[50%] '>
                             <div>
                                 <span className='font-bold'>Nombre de instituto: </span> {trackingDB[query]['NOMBRE DE INSTITUTO']}
                             </div>
@@ -52,7 +52,7 @@ export default function Home() {
                                 <span className='font-bold'>Pagina Web:</span>   {trackingDB[query]['LINK DE PAGINA']}
                             </div>
                         </div>
-                        <div className='w-[50%] flex flex-col items-center justify-center md:items-end pt-10 md:pt-0'>
+                        <div className='w-full md:w-[50%] flex flex-col items-center justify-center md:items-end pt-10 md:pt-0'>
 
                             <div className='flex flex-col items-center justify-center md:items-center pt-10 md:pt-0'>
                                 <h4 className='text-center'>Escanea la ubicacion con Google LENS <br /> y ubicanos en GPS MAPS</h4>
@@ -71,7 +71,7 @@ export default function Home() {
                                     />
                                 </div>
                                 <Link href={trackingDB[query]['LINK DE UBICACION']} className=''>
-                                    <button className='flex items-center text-white  bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
+                                    <button className='flex items-center text-white  bg-[#ff5b5b] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
                                         Ubicar directamente
                                     </button>
                                 </Link>
@@ -84,33 +84,26 @@ export default function Home() {
 
 
                     {trackingDB && trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
-                        <div className='relative p-5 my-5 mt-10 bg-white space-y-5   '>
-
+                        <div className='relative  my-5 mt-10 bg-[white] space-y-5   '>
                             {/* <h5 className='text-center text-[16px] font-bold'>CARRERAS<br /> </h5> */}
-
-
                             <div class="relative overflow-x-auto">
                                 <table class="w-full text-sm text-left rtl:text-right text-gray-700 ">
-                                    <thead class="text-[14px] font-bold text-gray-800 uppercase bg-gray-200  ">
+                                    <thead class="text-[12px] font-bold text-gray-800 uppercase bg-[#ff5b5b]  ">
                                         <tr>
                                             <th scope="col" class="px-6 py-3 font-bold">
                                                 Carreras
                                             </th>
                                             <th scope="col" class="px-6 py-3 font-bold">
-                                                Tipo de carrera
+                                                Nivel
                                             </th>
                                             <th scope="col" class="px-6 py-3 font-bold">
-                                                Horarios
+                                                Turnos
                                             </th>
-
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {data2 && data2 && Object.values(data2).map((item, index) => {
-                                            return <tr class="bg-white border-b text-[12px] ">
-
-
-
+                                            return <tr class="bg-[#ffe1e1] border-b text-[12px] ">
                                                 <td scope="row" class="px-6 py-4">
                                                     {item[`ip`]}
                                                 </td>
@@ -122,14 +115,7 @@ export default function Home() {
                                                 </td>
 
                                             </tr>
-
-
-
-
-
-                                        })
-                                        }
-
+                                        })}
                                     </tbody>
                                 </table>
                             </div>

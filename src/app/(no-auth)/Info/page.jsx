@@ -201,7 +201,7 @@ export default function Home() {
     }
 
 
-    return (<section className='h-screen p-5 md:p-12  bg-white'>
+    return (<section className='h-screen p-5 md:p-12  bg-[#ffefef]'>
 
         <div className='flex justify-center'>
 
@@ -236,8 +236,6 @@ export default function Home() {
         </div>
         <br />
         <div className='relative left-0 right-0 mx-auto m-5 md:w-[80vw] bg-white shadow-2xl border h-full'>
-
-
             <div className=' '>
                 {
                     trackingDB && trackingDB && Object.entries(trackingDB).map((i, index) => {
@@ -250,17 +248,8 @@ export default function Home() {
                     })
                 }
             </div>
-
-
-
-
         </div>
-
     </section>
-
-
-
-
     )
 }
 

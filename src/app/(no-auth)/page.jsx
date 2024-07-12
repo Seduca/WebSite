@@ -167,7 +167,7 @@ export default function Home() {
   return (
 
 
-    <section className='h-screen p-12 pt-[50px] bg-white '>
+    <section className='h-screen p-12 pt-[50px] bg-[#ffefef] '>
       <div className='flex justify-center'>
 
        <img src="/logo.jpeg" className='w-[80px]' alt="" /> 
@@ -182,7 +182,7 @@ export default function Home() {
             Informacion de Institutos <br /> tecnicos tecnologicos <br />publicos y privados <br /> LA PAZ - EL ALTO <br /> 2024
           </p>
           <Link href='/Info' className=''>
-            <button className='flex items-center text-white  bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
+            <button className='flex items-center text-white  bg-[#ff5b5b] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
               Acceder a info
             </button>
           </Link>

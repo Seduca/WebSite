@@ -105,7 +105,7 @@ export default function BottomNavigation({ rol }) {
                                 )
                             } */}
 
-                            {/* <button className=' flex items-center text-white h-[35px]  bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5' onClick={() => window.open('https://sistemas.logisticsgear.net')}>
+                            {/* <button className=' flex items-center text-white h-[35px]  bg-[#ff5b5b] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5' onClick={() => window.open('https://sistemas.logisticsgear.net')}>
                                 <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 10C11.1046 10 12 9.10457 12 8C12 6.89543 11.1046 6 10 6C8.89543 6 8 6.89543 8 8C8 9.10457 8.89543 10 10 10Z" stroke="white" stroke-width="1.5" />
                                     <path d="M14 14C14 15.105 14 16 10 16C6 16 6 15.105 6 14C6 12.895 7.79 12 10 12C12.21 12 14 12.895 14 14Z" stroke="white" stroke-width="1.5" />
@@ -151,7 +151,7 @@ export default function BottomNavigation({ rol }) {
                             </li>
                             {pathname === '/' && (user
                                 ? <li>
-                                    <button className='flex items-center text-white   bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5' onClick={() => router.push('/Admin')}>
+                                    <button className='flex items-center text-white   bg-[#ff5b5b] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5' onClick={() => router.push('/Admin')}>
                                       
                                         <span className=' text-[16px]'>
                                             Admin

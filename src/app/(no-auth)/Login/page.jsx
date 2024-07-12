@@ -58,7 +58,7 @@ export default function Home() {
             </div> */}
             <div className='flex justify-center py-5'>
 
-            <button className='flex items-center text-white  bg-gradient-to-r from-blue-900 via-blue-900 to-blue-900 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
+            <button className='flex items-center text-white  bg-[#ff5b5b] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
               Iniciar Sesion
             </button>
 
