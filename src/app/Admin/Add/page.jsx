@@ -78,8 +78,8 @@ export default function Home() {
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['RESOLUCIÓN MISTERIAL']} required label={'RESOLUCIÓN MISTERIAL'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['LINK DE PÁGINA']} required label={'LINK DE PÁGINA'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['LINK DE UBICACIÓN']} required label={'LINK DE UBICACIÓN'} shadow='shadow-white' />
-                            < Select arr={['PÚBLICO', 'PRIVADO']} defaultValue={data.PROPIEDAD ? data.PROPIEDAD : 'Seccionar'} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
-                            < Select arr={['TÉCNICO', 'TECNOLÓGICO']} defaultValue={data['TIPO DE INSTITUTO'] ? data['TIPO DE INSTITUTO'] : 'Seccionar'} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
+                            < Select arr={['Público', 'Privado']} defaultValue={data.PROPIEDAD ? data.PROPIEDAD : 'Seccionar'} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
+                            < Select arr={['Técnico', 'Tecnológico']} defaultValue={data['TIPO DE INSTITUTO'] ? data['TIPO DE INSTITUTO'] : 'Seccionar'} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
 
                             <h5 className='text-center font-medium text-[16px]'>CARRERAS +<br /> </h5>
 

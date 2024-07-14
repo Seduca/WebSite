@@ -114,8 +114,8 @@ export default function Home() {
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['RESOLUCIÓN MISTERIAL']} required label={'RESOLUCIÓN MINISTERIAL'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE PÁGINA']} required label={'LINK DE PÁGINA'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE UBICACIÓN']} required label={'LINK DE UBICACIÓN'} shadow='shadow-white' />
-                            < Select arr={['PÚBLICO', 'PRIVADO']} defaultValue={data[query] && data[query].PROPIEDAD ? data[query].PROPIEDAD : trackingDB[query]['PROPIEDAD']} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
-                            < Select arr={['TÉCNICO', 'TECNOLÓGICO']} defaultValue={data[query] && data[query]['TIPO DE INSTITUTO'] ? data[query]['TIPO DE INSTITUTO'] : trackingDB[query]['TIPO DE INSTITUTO']} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
+                            < Select arr={['Público', 'Privado']} defaultValue={data[query] && data[query].PROPIEDAD ? data[query].PROPIEDAD : trackingDB[query]['PROPIEDAD']} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
+                            < Select arr={['Técnico', 'Tecnológico']} defaultValue={data[query] && data[query]['TIPO DE INSTITUTO'] ? data[query]['TIPO DE INSTITUTO'] : trackingDB[query]['TIPO DE INSTITUTO']} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
 
 
 
