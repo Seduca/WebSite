@@ -43,7 +43,7 @@ export default function Home() {
   const inputRef2 = useRef('')
 
 
- 
+
 
 
   function handlerClickSelect2(e) {
@@ -158,47 +158,49 @@ export default function Home() {
     }
     )
   }
- 
-  
+
+
   // function HandlerOnChange(e) {
   //   QRreaderUtils(e, setFilterQR,)
   // }
 
   return (
 
+    <section className='relative min-h-screen p-5 md:p-12 pt-[50px] flex flex-col justify-around bg-[#2cdcffb4] '>
+      
 
-    <section className='h-screen p-12 pt-[50px] bg-[#ffefef] '>
-      <div className='flex justify-center'>
+        <div className='flex flex-col items-center justify-center'>
+          <img src="/logo.jpeg" className='w-[150px] md:w-[250px] md:h-[200px] ' alt="" />
+          <h1 className='text-[27px] text-center font-bold  '>SEDUCA INFORMA</h1>
+          <h2 className='text-center text-[20px] uppercase'>subdirección de educación superior de formación profesional <br /> LA PAZ - 2024</h2>
+        </div>
+      
 
-       <img src="/logo.jpeg" className='w-[80px]' alt="" /> 
-      </div>
 
-      <h1 className='text-[20px] text-center font-bold'>SEDUCA INFORMA</h1>
-      <h2 className='text-center text-[16px] uppercase'>subdireccion de educacion superior de formacion profesional <br /> LA PAZ - 2024</h2>
-      <div className='relative h-[80%] fles flex-col space-y-10 md:space-y-0 md:grid md:grid-cols-2 justify-items-center place-items-center gap-5  p-10'>
+      <div className='relative h-[80%] flex flex-col max-h-[300px] space-y-10 md:space-y-0 md:flex-row gap-5 p-5 md:p-10'>
 
-        <div className='text-[16px] w-full shadow-2xl border p-12 bg-white space-y-12'>
-          <p className='mb-5 uppercase'>
-            Informacion de Institutos <br /> tecnicos tecnologicos <br />publicos y privados <br /> LA PAZ - EL ALTO <br /> 2024
+        <div className='text-[16px] w-full flex flex-col justify-center items-center shadow-2xl border p-12 bg-white space-y-12'>
+          <p className='font-bold text-[16px] uppercase leading-relaxed '>
+            Información de Institutos <br /> técnicos tecnológicos <br />públicos y privados <br /> LA PAZ - EL ALTO <br /> 2024
+
+            <br />
+            <Link href='/Info' className=''>
+              <button className='mt-5 flex items-center text-white  bg-[#3d57d6] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
+                Acceder a info
+              </button>
+            </Link>
           </p>
-          <Link href='/Info' className=''>
-            <button className='flex items-center text-white  bg-[#ff5b5b] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
-              Acceder a info
-            </button>
-          </Link>
+
 
         </div>
         <div className='flex flex-col w-full justify-center items-center text-[16px] shadow-2xl border p-10 bg-white space-y-5'>
-          <p className='text-[16px] '>Accede facilmente atravez de nuestro codigo QR</p>
+          <p className='text-[18px] font-bold'>Accede fácilmente a travez de nuestro código QR</p>
           <img src="/qr.png" className='h-[150px]' alt="" />
         </div>
       </div>
     </section>
 
-
-
-
-
+  
 
 
   )

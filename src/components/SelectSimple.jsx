@@ -23,7 +23,7 @@ export default function Select({ arr, name, click, defaultValue, uuid, label, po
     return (
         <div className='relative'>
                 <div id={label}
-                    className={`relative  border border-[#a1a1a1]  pt-2.5 mb-0   w-full text-[12px]   px-5 ${bg ? `${bg} pb-2` : 'bg-transparent text-gray-900 border-[#a1a1a1]'}   focus:outline-none focus:ring-0  peer rounded-[5px]`}
+                    className={`relative  border border-[#a1a1a1]  pt-[10px]  mb-0   w-full text-[16px]   px-5 ${bg ? `${bg} pb-2` : 'bg-transparent text-gray-900 border-[#a1a1a1]'}   focus:outline-none focus:ring-0  peer rounded-[5px]`}
                     onClick={handlerSelect}>
                     {defaultValue === 'Seleccionar' && <span className='absolute'>Seleccionar</span>}
                     <input type="text" disabled className='relative  w-full h-full border-transparent outline-none focus:outline-none bg-transparent' value={defaultValue !== undefined && defaultValue !== 'Seleccionar' ? defaultValue : ''} minLength={2} required={required} />
@@ -36,7 +36,7 @@ export default function Select({ arr, name, click, defaultValue, uuid, label, po
                         }
                     </ul>
                 </div>
-                {label && <label htmlFor={label} className={`z-50 peer-focus:font-medium shadow-white shadow-2xl absolute text-[12px] ${select === name ? 'text-blue-600' : 'text-[#6b7280]'} bg-white px-5 mx-2 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600  peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6`}>{label}</label>}
+                {label && <label htmlFor={label} className={`z-50 peer-focus:font-medium shadow-white shadow-2xl absolute text-[16px] ${select === name ? 'text-blue-600' : 'text-[#6b7280]'} bg-white px-5 mx-2 duration-300 transform -translate-y-6 scale-75 top-3 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600  peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6`}>{label}</label>}
         </div>
     )
 }

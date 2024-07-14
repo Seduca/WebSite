@@ -95,8 +95,8 @@ export default function Home() {
                     <div className="absolute w-[50px] top-5 right-5 text-white p-1 rounded-tl-lg rounded-br-lg text-center bg-red-600" onClick={close}>
                         X
                     </div>
-                    {trackingDB &&trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
-                        <div className='relative p-5 my-5 mt-10 bg-white space-y-5 shadow-2xl  '>
+                    {trackingDB && trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
+                        <div className='relative p-5 my-5 mt-10 bg-white space-y-7 shadow-2xl  '>
                             <h5 className='text-center font-medium text-[16px]'>Editar <br /> </h5>
                             {/* <h5 className='text-center font-medium text-[16px]'>CODIGO DEL SERVICIO <br /> {query}<br /> </h5>
                             <br />
@@ -104,18 +104,18 @@ export default function Home() {
                                 {arrDB.map((item, index) => <div key={index} className='w-full  relative flex flex-col items-center m-2 cursor-pointer p-2' onClick={() => onClickHandlerCountry(item)} >
                                     <span className={`absolute z-10  top-[-5px] left-0 right-0 mx-auto border-[2px] border-[#294B98] rounded-full  w-[10px] h-[10px] ${db && item.img === db['img'] ? 'bg-[#39ff27]' : (trackingDB[query].trackIcon && item.img === trackingDB[query].trackIcon['img'] ? 'bg-[#39ff27]' : 'bg-white ')}`}></span>
                                     <img src={item.img} className={` inline h-[20px] sm:h-[25px] md:h-[50px]  ${db && item.img === db['img'] ? 'grayscale-0 brightness-125' : (trackingDB[query].trackIcon && item.img === trackingDB[query].trackIcon['img'] ? 'grayscale-0 brightness-125' : 'grayscale')}`} alt="" />
-                                    <span className={`h-[10px] text-[8px] sm:text-[12px] ${db && item.img === db['img'] ? 'text-[#294B98] font-medium' : (trackingDB[query].trackIcon && item.img === trackingDB[query].trackIcon['img'] ? 'text-[#294B98] font-medium' : 'font-medium ')}`}>{item.text}</span>
+                                    <span className={`h-[10px] text-[8px] sm:text-[16px] ${db && item.img === db['img'] ? 'text-[#294B98] font-medium' : (trackingDB[query].trackIcon && item.img === trackingDB[query].trackIcon['img'] ? 'text-[#294B98] font-medium' : 'font-medium ')}`}>{item.text}</span>
                                 </div>)}
                                 <span className='absolute top-[5px] h-[2px] bg-[#294B98] w-full'></span>
                             </div> */}
                             <br />
                             < InputFlotante type="date" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['FECHA DE CREACION']} required label={'FECHA DE CREACION'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['NOMBRE DE INSTITUTO']} disabled={true} required label={'NOMBRE DE INSTITUTO'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['RESOLUCION MISTERIAL']} required label={'RESOLUCION MISTERIAL'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE PAGINA']} required label={'LINK DE PAGINA'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE UBICACION']} required label={'LINK DE UBICACION'} shadow='shadow-white' />
-                            < Select  arr={['PUBLICA', 'PRIVADA']} defaultValue={data[query] && data[query].PROPIEDAD ? data[query].PROPIEDAD : trackingDB[query]['PROPIEDAD']} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
-                            < Select  arr={['TECNICA', 'TECNOLOGICA']} defaultValue={data[query] && data[query]['TIPO DE INSTITUTO'] ? data[query]['TIPO DE INSTITUTO'] : trackingDB[query]['TIPO DE INSTITUTO']} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='TIPO DE INSTITUTO' required />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['RESOLUCIÓN MISTERIAL']} required label={'RESOLUCIÓN MINISTERIAL'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE PÁGINA']} required label={'LINK DE PÁGINA'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE UBICACIÓN']} required label={'LINK DE UBICACIÓN'} shadow='shadow-white' />
+                            < Select arr={['PÚBLICO', 'PRIVADO']} defaultValue={data[query] && data[query].PROPIEDAD ? data[query].PROPIEDAD : trackingDB[query]['PROPIEDAD']} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
+                            < Select arr={['TÉCNICO', 'TECNOLÓGICO']} defaultValue={data[query] && data[query]['TIPO DE INSTITUTO'] ? data[query]['TIPO DE INSTITUTO'] : trackingDB[query]['TIPO DE INSTITUTO']} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
 
 
 
@@ -139,24 +139,24 @@ export default function Home() {
                         </button>
                     </div>
 
-                    { trackingDB&&trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
+                    {trackingDB && trackingDB[query] && <form className="relative  pt-5 sm:col-span-3 mb-5 pb-5 "  >
                         <div className='relative p-5 my-5 mt-10 bg-white space-y-5 shadow-2xl  '>
 
-                            <h5 className='text-center font-medium text-[16px]'>STATUS +<br /> </h5>
+                            <h5 className='text-center font-medium text-[16px]'>CARRERAS +<br /> </h5>
                             {data2 && data2 && Object.values(data2).map((item, index) => {
                                 return <div className=' space-y-5 border-b  md:place-items-end md:gap-2  border-[#818181] pb-5'>
                                     < InputFlotante type="text" name={`ip`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index,)} value={data2[`item${index}`] && data2[`item${index}`][`ip`] ? data2[`item${index}`][`ip`] : item[`ip`]} required label={'Carrera'} shadow='shadow-white' />
                                     {/* < InputFlotante type="text" name={`ic`} uid={`value_${index}`} onChange={(e) => onChangeHandler2(e, index,)} value={data2[`item${index}`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : item[`ic`]} required label={'Valor'} shadow='shadow-white' /> */}
-                                    < Select arr={['Tecnico Superior', 'Tecnico medio', 'Tecnico auxiliar']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : i[`ic`]} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel' required />
+                                    < Select arr={['Técnico Superior', 'Técnico Medio', 'Técnico Auxiliar']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : i[`ic`]} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel' required />
                                     <div className='flex justify-center'>
                                         <div className='ml-10'>
-                                            Mañana <input type="checkbox" name='mañana' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].mañana}/>
+                                            Mañana <input type="checkbox" name='mañana' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].mañana} />
                                         </div>
-                                        <div  className='ml-10'>
-                                            Tarde  <input type="checkbox" name='tarde' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].tarde}/>
+                                        <div className='ml-10'>
+                                            Tarde  <input type="checkbox" name='tarde' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].tarde} />
                                         </div>
-                                        <div  className='ml-10'>
-                                            Noche <input type="checkbox" name='noche' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].noche}/>
+                                        <div className='ml-10'>
+                                            Noche <input type="checkbox" name='noche' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].noche} />
                                         </div>
                                     </div>
                                 </div>

@@ -75,11 +75,11 @@ export default function Home() {
                             <br />
                             < InputFlotante type="date" id="floating_5" onChange={(e) => handlerOnChange(e)} value={getDate(new Date())} disabled required label={'FECHA DE CREACION'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['NOMBRE DE INSTITUTO']} required label={'NOMBRE DE INSTITUTO'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['RESOLUCION MISTERIAL']} required label={'RESOLUCION MISTERIAL'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['LINK DE PAGINA']} required label={'LINK DE PAGINA'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['LINK DE UBICACION']} required label={'LINK DE UBICACION'} shadow='shadow-white' />
-                            < Select arr={['PUBLICA', 'PRIVADA']} defaultValue={data.PROPIEDAD ? data.PROPIEDAD : 'Seccionar'} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
-                            < Select arr={['TECNICA', 'TECNOLOGICA']} defaultValue={data.PROPIEDAD ? data.PROPIEDAD : 'Seccionar'} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='TIPO DE INSTITUTO' required />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['RESOLUCIÓN MISTERIAL']} required label={'RESOLUCIÓN MISTERIAL'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['LINK DE PÁGINA']} required label={'LINK DE PÁGINA'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['LINK DE UBICACIÓN']} required label={'LINK DE UBICACIÓN'} shadow='shadow-white' />
+                            < Select arr={['PÚBLICO', 'PRIVADO']} defaultValue={data.PROPIEDAD ? data.PROPIEDAD : 'Seccionar'} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
+                            < Select arr={['TÉCNICO', 'TECNOLÓGICO']} defaultValue={data['TIPO DE INSTITUTO'] ? data['TIPO DE INSTITUTO'] : 'Seccionar'} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
 
                             <h5 className='text-center font-medium text-[16px]'>CARRERAS +<br /> </h5>
 
@@ -95,7 +95,7 @@ export default function Home() {
                             {data2 && data2 !== undefined && Object.values(data2).map((i, index) => {
                                 return <div className=' space-y-5 border-b border-[#818181] pb-5'>
                                     < InputFlotante type="text" name={`ip`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index, 'd4')} value={data2[`item${index}`][`ip`] && data2[`item${index}`][`ip`] ? data2[`item${index}`][`ip`] : i[`ip`]} required label={'Carrera'} shadow='shadow-white' />
-                                    < Select arr={['Tecnico Superior', 'Tecnico medio', 'Tecnico auxiliar']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : 'Seleccionar'} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel' required />
+                                    < Select arr={['Técnico Superior', 'Técnico Medio', 'Técnico Auxiliar']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : 'Seleccionar'} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel' required />
                                     <div className='flex justify-center'>
                                         <div className='ml-10'>
                                             Mañana <input type="checkbox" name='mañana' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')}/>

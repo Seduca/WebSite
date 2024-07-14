@@ -201,55 +201,56 @@ export default function Home() {
     }
 
 
-    return (<section className='h-screen p-5 md:p-12  bg-[#ffefef]'>
+    return (
+        <section className='relative min-h-screen p-5 md:p-12 pt-[50px] flex flex-col justify-around bg-[#2cdcffb4] '>
+      
 
-        <div className='flex justify-center'>
-
-            <img src="/logo.jpeg" className='w-[80px]' alt="" />
+        <div className='flex flex-col items-center justify-center'>
+          <img src="/logo.jpeg" className='w-[150px] md:w-[250px] md:h-[200px] ' alt="" />
+          <h1 className='text-[27px] text-center font-bold  '>SEDUCA INFORMA</h1>
+          <h2 className='text-center text-[20px] uppercase'>subdirección de educación superior de formación profesional <br /> LA PAZ - 2024</h2>
         </div>
-        <h1 className='text-[20px] text-center font-bold'>SEDUCA INFORMA</h1>
-        <h2 className='text-center text-[16px] uppercase'>Subdireccion de educacion superior de formacion profesional <br /> LA PAZ - 2024</h2>
+      
+            <br />
 
-        <br />
+            <div className="relative left-0 right-0 mx-auto w-[90] max-w-[500px] h-[40px] ">
+                <input type="search" id="location-search" onChange={handlerFilter} className="block p-3 w-full min-w-[350px] shadowsss shadow-xl border border-[#d8d8d8] h-full z-20  text-[16px]   bg-[#ffffff] rounded-[5px] focus:ring-blue-500 focus:border-blue-500 text-black" placeholder="Buscar por NOMBRE DEL INSTITUTO" required />
+                <button type="submit" className="absolute top-0 end-0 h-full p-2.5 text-[16px] font-medium text-[white] bg-blue-700 rounded-r-[5px] border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
+                    <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span className="sr-only">Search</span>
+                </button>
 
-        <div className="relative left-0 right-0 mx-auto w-[90] max-w-[500px] h-[40px] ">
-            <input type="search" id="location-search" onChange={handlerFilter} className="block p-3 w-full shadowsss shadow-xl border border-[#d8d8d8] h-full z-20  text-[12px]   bg-[#ffffff] rounded-[5px] focus:ring-blue-500 focus:border-blue-500 text-black" placeholder="Buscar por NOMBRE DE INSTITUTO" required />
-            <button type="submit" className="absolute top-0 end-0 h-full p-2.5 text-[12px] font-medium text-[white] bg-blue-700 rounded-r-[5px] border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">
-                <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                </svg>
-                <span className="sr-only">Search</span>
-            </button>
-
-        </div>
-        <br />
-        <h3 className='text-center text-[16px] font-semibold'>filtrar por</h3>
-
-
-        <div className='relative flex justify-center' >
-            <button type="button" class={` shadow-2xl  ${filter2 === 'PUBLICA' ? 'bg-gradient-to-br text-white from-purple-600 to-blue-500 hover:bg-gradient-to-bl ' : 'border border-[#c6c6c6] text-black '} focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2`} onClick={() => filter2 === 'PUBLICA' ? setFilter2('') : setFilter2('PUBLICA')}>
-                INSTITUTOS PUBLICOS
-            </button>
-            <button type="button" class={`shadow-2xl ${filter2 === 'PRIVADA' ? 'bg-gradient-to-br text-white  from-purple-600 to-blue-500 hover:bg-gradient-to-bl' : 'border border-[#c6c6c6] text-black '}  focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2`} onClick={() => filter2 === 'PRIVADA' ? setFilter2('') : setFilter2('PRIVADA')}>
-                INSTITUTOS PRIVADOS
-            </button>
-        </div>
-        <br />
-        <div className='relative left-0 right-0 mx-auto m-5 md:w-[80vw] bg-white shadow-2xl border h-full'>
-            <div className=' '>
-                {
-                    trackingDB && trackingDB && Object.entries(trackingDB).map((i, index) => {
-                        return i[1]['NOMBRE DE INSTITUTO'] && i[1]['NOMBRE DE INSTITUTO'].toLowerCase().includes(filter.toLowerCase()) && i[1]['PROPIEDAD'].includes(filter2) && <div className='relative bg-white flex justify-between items-center px-5 py-3 border-[.5px] cursor-pointer '>
-                            <span> INSTITUTO: {i[1]['NOMBRE DE INSTITUTO']} <br />{i[1]['PROPIEDAD']}</span>
-                            {console.log(i[1]['PROPIEDAD'])}
-                            <div className="w-[150px]">
-                                <Link href={`/Instituto?item=${i[1]['NOMBRE DE INSTITUTO']}`}><Button theme="Success">Mas Info</Button></Link> </div>
-                        </div>
-                    })
-                }
             </div>
-        </div>
-    </section>
+            <br />
+            <h3 className='text-center text-[16px] font-semibold'>BUSCAR</h3>
+
+
+            <div className='relative flex justify-center' >
+                <button type="button" class={` shadow-2xl  ${filter2 === 'PUBLICA' ? 'bg-gradient-to-br text-white from-purple-600 to-blue-500 hover:bg-gradient-to-bl ' : 'border border-[#c6c6c6] text-black '} focus:outline-none font-medium rounded-lg text-[16px] px-5 py-2.5 text-center me-2 mb-2`} onClick={() => filter2 === 'PUBLICA' ? setFilter2('') : setFilter2('PUBLICA')}>
+                    INSTITUTOS PÚBLICOS
+                </button>
+                <button type="button" class={`shadow-2xl ${filter2 === 'PRIVADA' ? 'bg-gradient-to-br text-white  from-purple-600 to-blue-500 hover:bg-gradient-to-bl' : 'border border-[#c6c6c6] text-black '}  focus:outline-none font-medium rounded-lg text-[16px] px-5 py-2.5 text-center me-2 mb-2`} onClick={() => filter2 === 'PRIVADA' ? setFilter2('') : setFilter2('PRIVADA')}>
+                    INSTITUTOS PRIVADOS
+                </button>
+            </div>
+            <br />
+            <div className='relative left-0 right-0 mx-auto w-full md:w-[80vw] bg-white shadow-2xl border h-full'>
+                <div className=' '>
+                    {
+                        trackingDB && trackingDB && Object.entries(trackingDB).map((i, index) => {
+                            return i[1]['NOMBRE DE INSTITUTO'] && i[1]['NOMBRE DE INSTITUTO'].toLowerCase().includes(filter.toLowerCase()) && i[1]['PROPIEDAD'].includes(filter2) && <div className='relative bg-white flex justify-between items-center px-5 py-3 border-[.5px] cursor-pointer text-[16px]'>
+                                <span> INSTITUTO: {i[1]['NOMBRE DE INSTITUTO']} <br />{i[1]['PROPIEDAD']}</span>
+                                {console.log(i[1]['PROPIEDAD'])}
+                                <div className="w-[150px]">
+                                    <Link href={`/Instituto?item=${i[1]['NOMBRE DE INSTITUTO']}`}><Button theme="Success">Más Info</Button></Link> </div>
+                            </div>
+                        })
+                    }
+                </div>
+            </div>
+        </section>
     )
 }
 

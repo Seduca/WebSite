@@ -29,7 +29,7 @@ console.log(defaultValue)
 
         <div 
              className={`flex relative bg-gray-50 border border-gray-300 text-gray-900 text-[14px] rounded-xl focus:ring-blue-500 focus:border-blue-500  w-full px-5 p-3`} 
-            //  className={`bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 
+            //  className={`bg-gray-50 border border-gray-300 text-gray-900 text-[16px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 
             // dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`} 
             onClick={handlerSelect}>
            { defaultValue === 'Ninguno' ? 'Seleccionar':<li  className='flex items-center  cursor-pointer ' > <img src={defaultValue.flags.png}  className='mr-5 inline w-[30px] border-[1px]' alt="" />{defaultValue.translations.spa.official} </li> }
@@ -37,7 +37,7 @@ console.log(defaultValue)
             <ul 
 
              className={select ? `absolute h-[100px] overflow-auto left-0 top-12 bg-gray-50 outline outline-1 outline-gray-300 text-gray-900 text-[14px] rounded-b-xl focus:ring-blue-500 focus:outline-blue-500 w-full p-3 z-10`: 'hidden' } 
-            //  className={`bg-gray-50 border border-gray-300 text-gray-900 text-[12px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 
+            //  className={`bg-gray-50 border border-gray-300 text-gray-900 text-[16px] rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 
             // dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`} 
             >
                 {
