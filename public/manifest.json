@@ -1,14 +1,14 @@
 {
-    "name": "Logistics Gear",
-    "short_name": "Logistics Gear",
+    "name": "Seduca Informa",
+    "short_name": "Seduca Informa",
     "icons": [
       {
-        "src": "/lg.png",
+        "src": "/logo.png",
         "sizes": "384x384",
         "type": "image/png"
       },
       {
-        "src": "lg.png",
+        "src": "logo.png",
         "sizes": "512x512",
         "type": "image/png"
       }
