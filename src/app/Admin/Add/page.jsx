@@ -31,7 +31,7 @@ export default function Home() {
     }
     function handlerSelectClick3(name, i, index) {
         setData2({ ...data2, [`item${index}`]: { ...data2[`item${index}`], [name]: i } })
-        return
+        return      
     }
     function handlerSelectClick4(e, index, d) {
         console.log(e.target.checked)
