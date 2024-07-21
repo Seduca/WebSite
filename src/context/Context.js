@@ -12,6 +12,7 @@ export function UserProvider({ children }) {
 	const [cliente, setCliente] = useState(undefined)
 	const [trackingDB, setTrackingDB] = useState(undefined)
 	const [track, setTrack] = useState(undefined)
+	const [query, setQuery] = useState('')
 	const [element, setElement] = useState('TRACKING')
 	const [calcValueFCL, setCalcValueFCL] = useState('NO DATA')
 	const [calcValue, setCalcValue] = useState('NO DATA')
@@ -42,7 +43,9 @@ export function UserProvider({ children }) {
     const [tienda, setTienda] = useState('Comprar')
 	const [pdfData, setPdfData] = useState({tarifa: [''], otrosGastos: ['']})
 	const [selectValue, setSelectValue] = useState({})
+	const [dataUrl, setDataUrl] = useState('')
 
+	
 	const videoRef = useRef();
 	const [play, setPlay] = useState(true)
 	const [sound, setSound] = useState(false)
@@ -126,6 +129,8 @@ export function UserProvider({ children }) {
 			setFilter,
 			setRecetaDB,
 			setQRurl,
+			dataUrl, setDataUrl,
+			query, setQuery,
 			setQr,selectValue, setSelectValue,
 			naviera, setNaviera,
 			element, setElement,
@@ -148,7 +153,7 @@ export function UserProvider({ children }) {
 			setUserSuccess,
 			setUserItem
 		})
-	}, [user, userDB, distributorPDB, focus, languaje,selectValue, productDB,trackingDB, track,element,option, calcValue,calcValueFCL,naviera,pedidos, item, cart, success, qr, QRurl, recetaDB, cliente, filter, filterQR, recetaDBP, select, nav, temporal, userUuid, modal, msg, tienda, introVideo, play, sound, navItem, webScann, seeMore,])
+	}, [user, userDB, distributorPDB, focus,dataUrl, languaje,selectValue, query, productDB,trackingDB, track,element,option, calcValue,calcValueFCL,naviera,pedidos, item, cart, success, qr, QRurl, recetaDB, cliente, filter, filterQR, recetaDBP, select, nav, temporal, userUuid, modal, msg, tienda, introVideo, play, sound, navItem, webScann, seeMore,])
 
 	return (
 		<UserContext.Provider value={value} >

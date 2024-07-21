@@ -3,10 +3,12 @@ import { useUser } from '@/context/Context'
 import { useEffect, useState } from 'react'
 import QRCode from "qrcode.react";
 import Link from 'next/link';
-
+import dynamic from 'next/dynamic'
+const InvoicePDF = dynamic(() => import("@/components/DownloadPDF"), {
+    ssr: false,
+});
 export default function Home() {
-    const { setUserSuccess, success, trackingDB, cliente, setCliente, cart, setCart, modal, setModal } = useUser()
-    const [query, setQuery] = useState('')
+    const { setUserSuccess, success, trackingDB, cliente, setCliente, cart, setCart, modal, setModal, query, setQuery, setDataUrl } = useUser()
     const [data2, setData2] = useState({})
 
 
@@ -17,6 +19,7 @@ export default function Home() {
         if (trackingDB && trackingDB[query] && trackingDB[query].carreras) {
             setData2({ ...trackingDB[query].carreras, ...data2 })
         }
+        document.getElementById('qr') && setDataUrl(document.getElementById('qr').toDataURL())
     }, [cliente, query, trackingDB])
     console.log(trackingDB)
     return (
@@ -71,10 +74,16 @@ export default function Home() {
                                     />
                                 </div>
                                 <Link href={trackingDB[query]['LINK DE UBICACIÓN']} className=''>
-                                    <button className='flex items-center text-white  bg-[#3d57d6] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800      rounded-[5px] border    text-center  p-2 px-5'>
+                                    <button className='flex items-center justify-center text-white  bg-[#3d57d6] hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-blue-800   w-[200px]    rounded-[5px] border    text-center  p-2 px-5'>
                                         Ubicar directamente
                                     </button>
                                 </Link>
+                                <Link href='/SolicitudPDF' className=''>
+                                        Ubicar directamente
+                                    
+                                </Link>
+                                <InvoicePDF />
+
                             </div>
 
                         </div>

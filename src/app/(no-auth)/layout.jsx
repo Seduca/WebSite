@@ -60,7 +60,7 @@ function Home({ children }) {
 
     <main className={`relative min-w-screen  lg:pb-0  lg:min-w-auto my-[0px]   lg:min-h-screen  ${nav ? 'w-screen pl-[100vw] overflow-hidden ' : '  lg:px-[0px]'}`} onClick={() => setNav(false)} style={{ transition: 'all 0.5' }}>
       <div>
-        <img src="/flagBOL.jfif" className='fixed left-[25vw] top-[30vh] w-[50vw]' alt="" />
+        {/* <img src="/flagBOL.jfif" className='fixed left-[25vw] top-[30vh] w-[50vw]' alt="" /> */}
         {children}
       </div>
     </main>
