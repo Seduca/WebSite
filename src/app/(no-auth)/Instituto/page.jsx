@@ -78,10 +78,10 @@ export default function Home() {
                                         Ubicar directamente
                                     </button>
                                 </Link>
-                                <Link href='/SolicitudPDF' className=''>
+                                {/* <Link href='/SolicitudPDF' className=''>
                                         Ubicar directamente
                                     
-                                </Link>
+                                </Link> */}
                                 <InvoicePDF />
 
                             </div>
