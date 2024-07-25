@@ -166,7 +166,7 @@ export default function Home() {
                                     < Select arr={['Semestral', 'Bimestral', 'Trimestral', 'Anual', 'Modular']} defaultValue={data2[`item${index}`][`re`] && data2[`item${index}`][`re`] ? data2[`item${index}`][`re`] : i[`re`]} name='re' click={handlerSelectClick3} uuid={index} label='Régimen de estudio' required />
 
                                    
-                                   
+                                           
                                     <div className='flex justify-center'>
                                         <div className='ml-10'>
                                             Mañana <input type="checkbox" name='mañana' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].mañana} />
