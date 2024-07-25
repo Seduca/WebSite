@@ -43,13 +43,25 @@ export default function Home() {
                                 <span className='font-bold'>Nombre del Instituto: </span> {trackingDB[query]['NOMBRE DE INSTITUTO']}
                             </div>
                             <div>
-                                <span className='font-bold'> Resolución Ministerial: </span>{trackingDB[query]['RESOLUCIÓN MISTERIAL']}
+                                <span className='font-bold'> Resolución de Apertura: </span>{trackingDB[query]['RESOLUCIÓN MISTERIAL']}
+                            </div>
+                            <div>
+                                <span className='font-bold'> Municipio: </span>{trackingDB[query]['MUNICIPIO']}
+                            </div>
+                            <div>
+                                <span className='font-bold'> Provincia: </span>{trackingDB[query]['PROVINCIA']}
                             </div>
                             <div>
                                 <span className='font-bold'> Instituto: </span>{trackingDB[query]['TIPO DE INSTITUTO']}
                             </div>
                             <div>
-                                <span className='font-bold'>Institución:</span>   {trackingDB[query]['PROPIEDAD']}
+                                <span className='font-bold'>Carácter Jurídico:</span>   {trackingDB[query]['PROPIEDAD']}
+                            </div>
+                            <div>
+                                <span className='font-bold'> Dirección: </span>{trackingDB[query]['DIRECCIÓN']}
+                            </div>
+                            <div>
+                                <span className='font-bold'> Teléfonos: </span>{trackingDB[query]['TELÉFONOS']}
                             </div>
                             <div>
                                 <span className='font-bold'>Página Web:</span>   {trackingDB[query]['LINK DE PÁGINA']}
@@ -100,13 +112,19 @@ export default function Home() {
                                     <thead class="text-[16px] font-bold text-[#f1f1f1] uppercase bg-[#3d57d6]  ">
                                         <tr>
                                             <th scope="col" class="px-6 py-3 font-bold">
-                                                Carreras
+                                                Carreras o cursos de capacitación
                                             </th>
                                             <th scope="col" class="px-6 py-3 font-bold">
-                                                Nivel
+                                                Nivel académico
                                             </th>
                                             <th scope="col" class="px-6 py-3 font-bold">
                                                 Turnos
+                                            </th>
+                                            <th scope="col" class="px-6 py-3 font-bold">
+                                                Régimen de estudio
+                                            </th>
+                                            <th scope="col" class="px-6 py-3 font-bold">
+                                                Resolución ministerial
                                             </th>
                                         </tr>
                                     </thead>
@@ -121,6 +139,12 @@ export default function Home() {
                                                 </td>
                                                 <td class="px-6 py-4">
                                                     {data2[`item${index}`].mañana && 'Mañana'} <br />  {data2[`item${index}`].tarde && 'Tarde'} {data2[`item${index}`].tarde && <br />}  {data2[`item${index}`].noche && 'Noche'}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {item[`re`]}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {item[`rs`]}
                                                 </td>
 
                                             </tr>

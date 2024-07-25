@@ -11,7 +11,7 @@ import InputFlotante from '@/components/InputFlotante'
 import { generateUUID } from '@/utils/UIDgenerator'
 export default function Home() {
 
-    const { setUserSuccess, success,  cliente,  } = useUser()
+    const { setUserSuccess, success, cliente, } = useUser()
     const router = useRouter()
     const [query, setQuery] = useState('')
     const [data, setData] = useState({})
@@ -31,7 +31,7 @@ export default function Home() {
     }
     function handlerSelectClick3(name, i, index) {
         setData2({ ...data2, [`item${index}`]: { ...data2[`item${index}`], [name]: i } })
-        return      
+        return
     }
     function handlerSelectClick4(e, index, d) {
         console.log(e.target.checked)
@@ -75,11 +75,16 @@ export default function Home() {
                             <br />
                             < InputFlotante type="date" id="floating_5" onChange={(e) => handlerOnChange(e)} value={getDate(new Date())} disabled required label={'FECHA DE CREACION'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['NOMBRE DE INSTITUTO']} required label={'NOMBRE DE INSTITUTO'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['RESOLUCIÓN MISTERIAL']} required label={'RESOLUCIÓN MISTERIAL'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['RESOLUCIÓN MISTERIAL']} required name={'RESOLUCIÓN MISTERIAL'} label={'RESOLUCIÓN DE APERTURA'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['MUNICIPIO']} required name={'MUNICIPIO'} label={'MUNICIPIO'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['PROVINCIA']} required name={'PROVINCIA'} label={'PROVINCIA'} shadow='shadow-white' />
+                            < Select arr={['Fiscal', 'Privado', 'Convenio']} defaultValue={data.PROPIEDAD ? data.PROPIEDAD : 'Seccionar'} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='CARÁCTER JURÍDICO' required />
+                            < Select arr={['Técnico', 'Tecnológico']} defaultValue={data['TIPO DE INSTITUTO'] ? data['TIPO DE INSTITUTO'] : 'Seccionar'} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['DIRECCIÓN']} required label={'DIRECCIÓN'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['TELÉFONOS']} required label={'TELÉFONOS'} shadow='shadow-white' />
+
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['LINK DE PÁGINA']} required label={'LINK DE PÁGINA'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={data['LINK DE UBICACIÓN']} required label={'LINK DE UBICACIÓN'} shadow='shadow-white' />
-                            < Select arr={['Público', 'Privado']} defaultValue={data.PROPIEDAD ? data.PROPIEDAD : 'Seccionar'} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
-                            < Select arr={['Técnico', 'Tecnológico']} defaultValue={data['TIPO DE INSTITUTO'] ? data['TIPO DE INSTITUTO'] : 'Seccionar'} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
 
                             <h5 className='text-center font-medium text-[16px]'>CARRERAS +<br /> </h5>
 
@@ -87,26 +92,35 @@ export default function Home() {
                                 <button type='button' className="bg-red-500 text-white flex font-bold py-2 px-4 rounded-l" onClick={() => handlerLess2()}>
                                     -
                                 </button>
-                                <button type='button' className="bg-green-500 text-white font-bold py-2 px-4 rounded-r" onClick={() => setData2({ ...data2, [`item${data2 !== undefined && Object.keys(data2).length}`]: { ic: '', ip: '' } })} >
+                                <button type='button' className="bg-green-500 text-white font-bold py-2 px-4 rounded-r" onClick={() => setData2({ ...data2, [`item${data2 !== undefined && Object.keys(data2).length}`]: { ic: '', ip: '', rs: '' } })} >
                                     +
                                 </button>
                             </div>
 
                             {data2 && data2 !== undefined && Object.values(data2).map((i, index) => {
                                 return <div className=' space-y-5 border-b border-[#818181] pb-5'>
-                                    < InputFlotante type="text" name={`ip`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index, 'd4')} value={data2[`item${index}`][`ip`] && data2[`item${index}`][`ip`] ? data2[`item${index}`][`ip`] : i[`ip`]} required label={'Carrera'} shadow='shadow-white' />
-                                    < Select arr={['Técnico Superior', 'Técnico Medio', 'Técnico Auxiliar']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : 'Seleccionar'} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel' required />
+                                    < InputFlotante type="text" name={`ip`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index, 'd4')} value={data2[`item${index}`][`ip`] && data2[`item${index}`][`ip`] ? data2[`item${index}`][`ip`] : i[`ip`]} required label={'Carrera o cursos de capacitación'} shadow='shadow-white' />
+
+
+                                    < Select arr={['Técnico Superior', 'Técnico Medio', 'Técnico Auxiliar', 'Capacitación']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : 'Seleccionar'} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel Académico' required />
+
+                                    < InputFlotante type="text" name={`rs`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index, 'd5')} value={data2[`item${index}`][`rs`] && data2[`item${index}`][`rs`] ? data2[`item${index}`][`rs`] : i[`rs`]} required label={'Resolución Ministerial'} shadow='shadow-white' />
+                                    < Select arr={['Semestral', 'Bimestral', 'Trimestral', 'Anual', 'Modular']} defaultValue={data2[`item${index}`][`re`] && data2[`item${index}`][`re`] ? data2[`item${index}`][`re`] : 'Seleccionar'} name='re' click={handlerSelectClick3} uuid={index} label='Régimen de estudio' required />
+
+                                    <label htmlFor="" className='pl-5  block'>Turnos</label>
+
                                     <div className='flex justify-center'>
                                         <div className='ml-10'>
-                                            Mañana <input type="checkbox" name='mañana' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')}/>
+                                            Mañana <input type="checkbox" name='mañana' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} />
                                         </div>
-                                        <div  className='ml-10'>
-                                            Tarde  <input type="checkbox" name='tarde' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')}/>
+                                        <div className='ml-10'>
+                                            Tarde  <input type="checkbox" name='tarde' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} />
                                         </div>
-                                        <div  className='ml-10'>
-                                            Noche <input type="checkbox" name='noche' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')}/>
+                                        <div className='ml-10'>
+                                            Noche <input type="checkbox" name='noche' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} />
                                         </div>
                                     </div>
+
                                 </div>
                             })
                             }

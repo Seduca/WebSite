@@ -195,26 +195,42 @@ const PDFView = ({ click }) => {
                                 <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', borderBottom:'2px solid #505050', paddingBottom: '10px' }} >
                                     <Image source="/logo.jpeg" style={{width: '150px', height:'150px'}} ></Image>
                                     <Text style={{fontSize: '14px', ...styles.textExtraBold}}>SEDUCA INFORMA</Text>
-                                    <Text style={{fontSize: '14px', textAlign: 'center', ...styles.textBold}}>subdirección de educación superior de formación profesional <Br /> LA PAZ - 2024</Text>
+                                    <Text style={{fontSize: '14px', textAlign: 'center', ...styles.textBold}}>Subdirección de Educación Superior de Formación Profesional <Br /> LA PAZ - 2024</Text>
                                 </View>
                                 <Br />
-                                <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', paddingVertical: '30px' }}>
+                                <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingLeft: '20px', paddingVertical: '30px' }}>
                                     <View>
                                         <View style={styles.textBox}>
                                             <Text style={styles.textBold}>Nombre del Instituto: </Text>
                                             <Text style={styles.textLight}>{trackingDB[query]['NOMBRE DE INSTITUTO']}</Text>
                                         </View>
                                         <View style={styles.textBox}>
-                                            <Text style={styles.textBold}>Resolución Ministerial: </Text>
+                                            <Text style={styles.textBold}>Resolución de Apertura: </Text>
                                             <Text style={styles.textLight}>{trackingDB[query]['RESOLUCIÓN MISTERIAL']}</Text>
+                                        </View>
+                                        <View style={styles.textBox}>
+                                            <Text style={styles.textBold}>Municipio: </Text>
+                                            <Text style={styles.textLight}>{trackingDB[query]['MUNICIPIO']}</Text>
+                                        </View>
+                                        <View style={styles.textBox}>
+                                            <Text style={styles.textBold}>Provincia: </Text>
+                                            <Text style={styles.textLight}>{trackingDB[query]['PROVINCIA']}</Text>
                                         </View>
                                         <View style={styles.textBox}>
                                             <Text style={styles.textBold}>Instituto: </Text>
                                             <Text style={styles.textLight}>{trackingDB[query]['TIPO DE INSTITUTO']}</Text>
                                         </View>
                                         <View style={styles.textBox}>
-                                            <Text style={styles.textBold}>Institución: </Text>
+                                            <Text style={styles.textBold}>Carácter Jurídico: </Text>
                                             <Text style={styles.textLight}>{trackingDB[query]['PROPIEDAD']}</Text>
+                                        </View>
+                                        <View style={styles.textBox}>
+                                            <Text style={styles.textBold}>Dirección: </Text>
+                                            <Text style={styles.textLight}>{trackingDB[query]['DIRECCIÓN']}</Text>
+                                        </View>
+                                        <View style={styles.textBox}>
+                                            <Text style={styles.textBold}>Telefonos: </Text>
+                                            <Text style={styles.textLight}>{trackingDB[query]['TELÉFONOS']}</Text>
                                         </View>
                                         <View style={styles.textBox}>
                                             <Text style={styles.textBold}>Página Web: </Text>
@@ -248,13 +264,19 @@ const PDFView = ({ click }) => {
                                             <View class="w-full text-[10px] text-left rtl:text-right text-gray-700 ">
                                                 <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', fontSize: '10px', fontWeight: 'bold', color: 'white', backgroundColor: '#3d57d6', padding: '5px', fontFamily: 'Inter', fontWeight: 'bold' }} >
                                                     <Text style={{ width: '33%' }}>
-                                                        CARRERAS
+                                                        CARRERAS O <Br/>CURSOS DE<Br/>CAPACITACIÓN
                                                     </Text>
                                                     <Text style={{ width: '33%' }}>
-                                                        NIVEL
+                                                        NIVEL <Br/>ACADÉMICO
                                                     </Text>
                                                     <Text style={{ width: '33%' }}>
                                                         TURNOS
+                                                    </Text>
+                                                    <Text style={{ width: '33%' }}>
+                                                        RÉGIMEN DE <Br/>ESTUDIO
+                                                    </Text>
+                                                    <Text style={{ width: '33%' }}>
+                                                        RESOLUCIÓN <Br/>MINISTERIAL
                                                     </Text>
                                                 </View>
                                                 <View>
@@ -268,6 +290,12 @@ const PDFView = ({ click }) => {
                                                             </Text>
                                                             <Text style={{ width: '33%', ...styles.textLight }}>
                                                                 {data2[`item${index}`].mañana && 'Mañana'}{data2[`item${index}`].tarde && 'Tarde'}{data2[`item${index}`].tarde && <Br />}{data2[`item${index}`].noche && 'Noche'}
+                                                            </Text>
+                                                            <Text style={{ width: '33%', ...styles.textLight }}>
+                                                                {item[`re`]}
+                                                            </Text>
+                                                            <Text style={{ width: '33%', ...styles.textLight }}>
+                                                                {item[`rs`]}
                                                             </Text>
                                                         </View>
                                                     })}
@@ -301,7 +329,7 @@ const PDFView = ({ click }) => {
                             </svg>
                         </button>
                         : <button type="submit" className=" flex  justify-center items-center w-[200px] text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-[12px]  px-5 py-2 text-center" >
-                            Imprimir Info PDF
+                            Descargar Info PDF
                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.568 1.4248L20.3932 5.41231V20.5758H6.10352V20.6253H20.442V5.46249L16.568 1.4248Z" fill="#909090" />
                                 <path d="M16.5205 1.375H6.05469V20.5755H20.3932V5.41269L16.5205 1.375Z" fill="#F4F4F4" />
