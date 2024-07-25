@@ -111,12 +111,24 @@ export default function Home() {
                             <br />
                             < InputFlotante type="date" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['FECHA DE CREACION']} required label={'FECHA DE CREACION'} shadow='shadow-white' />
                             < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['NOMBRE DE INSTITUTO']} disabled={true} required label={'NOMBRE DE INSTITUTO'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['RESOLUCIÓN MISTERIAL']} required label={'RESOLUCIÓN MINISTERIAL'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE PÁGINA']} required label={'LINK DE PÁGINA'} shadow='shadow-white' />
-                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE UBICACIÓN']} required label={'LINK DE UBICACIÓN'} shadow='shadow-white' />
-                            < Select arr={['Público', 'Privado']} defaultValue={data[query] && data[query].PROPIEDAD ? data[query].PROPIEDAD : trackingDB[query]['PROPIEDAD']} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='PROPIEDAD' required />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['RESOLUCIÓN MISTERIAL']} required label={'RESOLUCIÓN DE APERTURA'} shadow='shadow-white' />
+
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['MUNICIPIO']} required label={'MUNICIPIO'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['PROVINCIA']} required label={'PROVINCIA'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['DIRECCIÓN']} required label={'DIRECCIÓN'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['TELÉFONOS']} required label={'TELÉFONOS'} shadow='shadow-white' />
+
                             < Select arr={['Técnico', 'Tecnológico']} defaultValue={data[query] && data[query]['TIPO DE INSTITUTO'] ? data[query]['TIPO DE INSTITUTO'] : trackingDB[query]['TIPO DE INSTITUTO']} name='TIPO DE INSTITUTO' click={handlerSelectClick} uuid='4576' label='INSTITUTO' required />
 
+                            < Select arr={['Público', 'Privado']} defaultValue={data[query] && data[query].PROPIEDAD ? data[query].PROPIEDAD : trackingDB[query]['PROPIEDAD']} name='PROPIEDAD' click={handlerSelectClick} uuid='4576' label='CARÁCTER JURÍDICO' required />
+
+
+
+
+
+
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE PÁGINA']} required label={'LINK DE PÁGINA'} shadow='shadow-white' />
+                            < InputFlotante type="text" id="floating_5" onChange={(e) => handlerOnChange(e)} defaultValue={trackingDB[query]['LINK DE UBICACIÓN']} required label={'LINK DE UBICACIÓN'} shadow='shadow-white' />
 
 
 
@@ -147,7 +159,14 @@ export default function Home() {
                                 return <div className=' space-y-5 border-b  md:place-items-end md:gap-2  border-[#818181] pb-5'>
                                     < InputFlotante type="text" name={`ip`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index,)} value={data2[`item${index}`] && data2[`item${index}`][`ip`] ? data2[`item${index}`][`ip`] : item[`ip`]} required label={'Carrera'} shadow='shadow-white' />
                                     {/* < InputFlotante type="text" name={`ic`} uid={`value_${index}`} onChange={(e) => onChangeHandler2(e, index,)} value={data2[`item${index}`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : item[`ic`]} required label={'Valor'} shadow='shadow-white' /> */}
-                                    < Select arr={['Técnico Superior', 'Técnico Medio', 'Técnico Auxiliar']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : i[`ic`]} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel' required />
+                                    < Select  arr={['Técnico Superior', 'Técnico Medio', 'Técnico Auxiliar', 'Capacitación']} defaultValue={data2[`item${index}`][`ic`] && data2[`item${index}`][`ic`] ? data2[`item${index}`][`ic`] : i[`ic`]} name='ic' click={handlerSelectClick3} uuid={index} label='Nivel' required />
+                                   
+                                    < InputFlotante type="text" name={`rs`} uid={`column_${index}`} onChange={(e) => onChangeHandler2(e, index,)} value={data2[`item${index}`] && data2[`item${index}`][`rs`] ? data2[`item${index}`][`rs`] : item[`rs`]} required label={'Resolución Ministerial'} shadow='shadow-white' />
+
+                                    < Select arr={['Semestral', 'Bimestral', 'Trimestral', 'Anual', 'Modular']} defaultValue={data2[`item${index}`][`re`] && data2[`item${index}`][`re`] ? data2[`item${index}`][`re`] : i[`re`]} name='re' click={handlerSelectClick3} uuid={index} label='Régimen de estudio' required />
+
+                                   
+                                   
                                     <div className='flex justify-center'>
                                         <div className='ml-10'>
                                             Mañana <input type="checkbox" name='mañana' className='ml-5' onChange={(e) => handlerSelectClick4(e, index, 'd4')} checked={data2[`item${index}`].mañana} />
